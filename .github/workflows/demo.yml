@@ -1,0 +1,26 @@
+name: Self Hosted Runner Demo
+
+on:
+  push:
+
+jobs:
+  demo:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print hostname
+        run: hostname
+
+      - name: Print current directory
+        run: pwd
+
+      - name: Show current user
+        run: whoami
+
+      - name: Sleep
+        run: sleep 120
+
+      - name: Finished
+        run: echo "Job completed"
