@@ -1,0 +1,19 @@
+name: Dev Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on:
+      - self-hosted
+      - linux
+      - dev
+
+    steps:
+
+      - run: |
+          echo "Development Runner"
+          hostname
+          echo $RUNNER_NAME

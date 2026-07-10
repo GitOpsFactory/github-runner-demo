@@ -1,0 +1,20 @@
+name: Production Deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  deploy:
+
+    runs-on:
+      - self-hosted
+      - linux
+      - prod
+
+    steps:
+
+      - run: |
+          echo "Production Runner"
+          hostname
+          echo $RUNNER_NAME
