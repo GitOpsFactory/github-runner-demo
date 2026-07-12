@@ -1,19 +1,17 @@
-name: Dev Deployment
+name: ARC Ephemeral Runner Test
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
-
-    runs-on:
-      - self-hosted
-      - linux
-      - dev
+  test:
+    runs-on: github-runners
 
     steps:
+      - uses: actions/checkout@v4
 
-      - run: |
-          echo "Development Runner"
+      - name: Verify Runner
+        run: |
+          echo "Hello from ARC"
           hostname
-          echo $RUNNER_NAME
+          uname -a
